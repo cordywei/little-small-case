@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vw</title>
+    <style>
+        html {
+            font-size: 16px;
+        }
+
+        @media screen and (min-width: 375px) {
+            html {
+                /* iPhone6的375px尺寸作为16px基准，414px正好18px大小, 600 20px */
+                font-size: calc(100% + 2 * (100vw - 375px) / 39);
+                font-size: calc(16px + 2 * (100vw - 375px) / 39);
+            }
+        }
+
+        @media screen and (min-width: 414px) {
+            html {
+                /* 414px-1000px每100像素宽字体增加1px(18px-22px) */
+                font-size: calc(112.5% + 4 * (100vw - 414px) / 586);
+                font-size: calc(18px + 4 * (100vw - 414px) / 586);
+            }
+        }
+
+        @media screen and (min-width: 600px) {
+            html {
+                /* 600px-1000px每100像素宽字体增加1px(20px-24px) */
+                font-size: calc(125% + 4 * (100vw - 600px) / 400);
+                font-size: calc(20px + 4 * (100vw - 600px) / 400);
+            }
+        }
+
+        @media screen and (min-width: 1000px) {
+            html {
+                /* 1000px往后是每100像素0.5px增加 */
+                font-size: calc(137.5% + 6 * (100vw - 1000px) / 1000);
+                font-size: calc(22px + 6 * (100vw - 1000px) / 1000);
+            }
+        }
+        /* .article {
+            font-size:calc(18px + 12 * (100vw - 720px) / 500);
+        } */
+       
+/* -------------------------------------分割线----------------------------------------- */
+
+        .box {
+            font-size: 16px;
+            font-size: calc(100% + 2 * (100vw - 375px) / 225);
+        }
+
+        @media screen and (min-width: 600px) {
+            .box {
+                font-size: calc(112.5% + 4 * (100vw - 600px) / 400);
+            }
+        }
+
+        @media screen and (min-width: 1000px) {
+            .box {
+                font-size: calc(137.5% + 5 * (100vw - 1000px) / 1000);
+            }
+        }
+
+        .box {
+            width: 100%;
+            max-width: 480px;
+            margin: auto;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .list {
+            overflow: hidden;
+        }
+
+        .image {
+            float: left;
+            width: 5em;
+            /* height: 3.75em; */
+            margin-right: 1em;
+        }
+
+        .content {
+            overflow: hidden;
+        }
+        .hezi {
+            width: 5rem;
+            height:5rem;
+            border: 1px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hezi"></div>
+    <div class="article">用vue做项目也有一段时间了，之前也是写过关于vue和webpack构建项目的相关文章，大家有兴趣可以去看下webpack+vue项目实战（一,搭建运行环境和相关配置）（这个系列一共有5篇文章，这是第一篇，其它几篇文章链接就不贴了）。但是关于vue入门基础的文章，我还没有写过，那么今天就写vue入门的三个小实例，这三个小实例是我刚接触vue的时候的练手作品，难度从很简单到简单，都是入门级的。希望能帮到大家更好的学习和了解vue，也是让自己能够复习一下vue。如果发现文章写得有什么不好，写错了，或者有什么建议！欢迎大家指点迷津！</div>
+
+    <div class="box">
+        <h2 class="title">标题</h2>
+        <div class="list">
+            <div class="image">
+                五个字大小
+                <img src="http://test.ydxcx.net/group1/M00/00/2A/rBsADVt7cEOAa0VSAAExHnLkB-k670.jpg" style="width:100%;">
+            </div>
+            <div class="content">
+                由于Android4.4才开始支持vw单位，所以，基于视区宽度的排版和布局迟迟没有火起来，但是，显然，快了~~
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
